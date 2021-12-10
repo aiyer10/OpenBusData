@@ -9,7 +9,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-folder = r'/users/ananth/Documents/OpenBusData/Data/'
+folder = r'/path/to/files'
 print("Reading files")
 result = pd.DataFrame()
 for x in glob.glob(os.path.join(folder, r'*.csv')):
@@ -25,8 +25,6 @@ print("Drawing maps...")
 fig = px.scatter_mapbox(result, lat="Latitude", lon="Longitude", hover_name="Operator",color='Day', hover_data=["Operator", "Time"], zoom=5)
 fig.update_layout(mapbox_style="open-street-map")
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-
-
 
 app.layout = html.Div(children=[
     html.H1(children='Hello Dash'),
