@@ -7,8 +7,8 @@ from tqdm import tqdm
 
 
 
-API_KEY = r'd3cef665597dcecdb6904a8cb9179f092b768725'
-url = r'https://data.bus-data.dft.gov.uk/api/v1/datafeed/?api_key=d3cef665597dcecdb6904a8cb9179f092b768725'
+API_KEY = <API_KEY>
+url = r'https://data.bus-data.dft.gov.uk/api/v1/datafeed/?api_key=<API_KEY>'
 
 print("Making requests to the API")
 response = requests.get(url)
@@ -58,5 +58,5 @@ x = str(datetime.now())[0:19]
 x = x.replace(':','_')
 
 print("Processing done at ", str(datetime.now()))
-df.to_csv(r'/Users/ananth/Documents/OpenBusData/Data/locationData-'+x+r'.csv', index=None)
+df.to_csv(r'/path/to/file/locationData-'+x+r'.csv', index=None)
 print('done')
